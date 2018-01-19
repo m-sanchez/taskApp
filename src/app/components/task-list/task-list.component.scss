@@ -1,0 +1,11 @@
+:host{
+  tr.updating{
+    opacity:0.5;
+  }
+  .delete-icon{
+    cursor: pointer;
+    &:hover{
+      color: red;
+    }
+  }
+}

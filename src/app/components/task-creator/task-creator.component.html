@@ -1,0 +1,25 @@
+<h4>Add Task</h4>
+<form  [formGroup]="taskGroup" novalidate (ngSubmit)="onSubmit(taskGroup)">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control" id="title" formControlName="title">
+  </div>
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea class="form-control" rows="2" id="description" formControlName="description"></textarea>
+  </div>
+  <div class="text-right">
+    <button type="submit" class="btn btn-primary">Create</button>
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="taskGroup.get('title').hasError('required') && taskGroup.get('title').touched">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Errror: </span>
+    Title is required
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="taskGroup.get('description').hasError('required') && taskGroup.get('description').touched">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only"> Error: </span>
+    Description is required
+  </div>
+</form>

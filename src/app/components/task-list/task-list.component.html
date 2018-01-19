@@ -1,0 +1,22 @@
+<span *ngIf="tasks && tasks.length === 0">
+  There are no elements to show
+</span>
+<span *ngIf="!tasks">
+  Loading...
+</span>
+<table class="table table-striped" *ngIf="tasks && tasks.length > 0">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let task of tasks; let i = index" [ngClass]="{'updating':task.updating}">
+    <td>{{task.fields.title.stringValue}}</td>
+    <td>{{task.fields.description.stringValue}}</td>
+    <td><span (click)="deleteTask(i)"  class="delete-icon glyphicon glyphicon-trash"></span></td>
+  </tr>
+  <tbody>
+</table>

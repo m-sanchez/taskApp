@@ -5,6 +5,7 @@
 
 export const environment = {
   production: false,
+  apiUrl: 'https://firestore.googleapis.com/v1beta1/projects/angular-task-e7f39/databases/(default)/documents/tasks',
   firebase: {
     apiKey: "AIzaSyCvnkhd_CaL8mod4vXSuWnC2LwJc1r_xoo",
     authDomain: "angular-task-e7f39.firebaseapp.com",
